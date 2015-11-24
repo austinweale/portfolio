@@ -24,7 +24,12 @@
 				</li>
 			</ul>
 		</div>
-		<div ng-repeat="curr in current">{{curr.$id}} value {{curr.$value}}</div>
+		<div class="container">
+			<h2 ng-bind="desData.title"></h2>
+			<p ng-bind="desData.description"></p>
+			<a ng-bind="desData.link"></a>
+
+		</div>
 
 	</body>
 

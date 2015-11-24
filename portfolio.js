@@ -7,7 +7,7 @@ myApp.controller('myCtrl', function($scope, $firebaseAuth, $firebaseArray, $fire
 
 	$scope.data = $firebaseArray($scope.ref);
 
-	$scope.descriptionData = {"description": "", 
+	$scope.desData = {"description": "", 
 								"link": "",
 								"title":""};
 
@@ -20,8 +20,8 @@ myApp.controller('myCtrl', function($scope, $firebaseAuth, $firebaseArray, $fire
 		var i = 0;
 		$scope.current.$loaded().then(function(i){
 			angular.forEach($scope.current, function(key, i) {
-				console.log(i + " " + key.$value); //add to array instead
-				$scope.descriptionData[key.$id] = key.$value;
+				
+				$scope.desData[key.$id] = key.$value;
 				if(!$scope.$$phase) {
 		          $scope.$apply();
 		        }
@@ -30,7 +30,7 @@ myApp.controller('myCtrl', function($scope, $firebaseAuth, $firebaseArray, $fire
 			if(!$scope.$$phase) {
 		          $scope.$apply();
 		    }
-		    console.log($scope.descriptionData)
+		    
 		});
 
 		if(!$scope.$$phase) {
