@@ -17,22 +17,21 @@
 
 	</head>
 	<body ng-app="myApp" ng-controller="myCtrl">
-		<h1 class="page-header">Info 343 Portfolio</h1>
-		<div class="container">
-			<ul class="nav navbar-nav">
-				<li ng-repeat="curr in data | orderBy:'index'">
-					<a ui-sref="{{curr.link}}">{{curr.$id}}</a>
-				</li>
-			</ul>
-		</div>
-		<!--<div class="container">
-			<h2 ng-bind="desData.title"></h2>
-			<p ng-bind="desData.description"></p>
-			<a ng-bind="desData.link"></a>
-
-		</div>-->
-		<div class="container">
-			<div ui-view></div>
+		<div class="all">
+			<h1 class="page-header">Info 343 Portfolio <span>Austin Weale</span></h1>
+			<div class="container">
+				<!--different tabs for pages -->
+				<ul class="nav navbar-nav">
+					<li ng-repeat="curr in data | orderBy:'index'">
+						<a ui-sref="{{curr.link}}">{{curr.$id}}</a>
+					</li>
+				</ul>
+			</div>
+			
+			<!--for the different previews of pages -->
+			<div class="container">
+				<div ui-view></div>
+			</div>
 		</div>
 
 	</body>
